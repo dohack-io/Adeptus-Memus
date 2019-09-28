@@ -25,7 +25,7 @@
     <item
         android:title="Segel einstellen"
         android:id="@+id/sail"
-        >
+        />
 
     <item android:title="Segel einstellen">
         <menu>
