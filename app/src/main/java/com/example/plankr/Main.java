@@ -1,6 +1,7 @@
 package com.example.plankr;
 
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.os.Bundle;
@@ -15,7 +16,7 @@ public class Main extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                 
+                 startActivity(new Profil().getIntent());
             }
         });
 
