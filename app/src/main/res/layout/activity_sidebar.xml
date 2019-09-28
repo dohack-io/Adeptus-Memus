@@ -24,6 +24,8 @@
         android:clickable="true"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_sidebar"
+        app:itemIconTint="@color/colorPrimaryDark"
+        app:itemTextAppearance="@style/TextAppearance.AppCompat.Small"
         app:itemTextColor="@color/colorPrimary"
         app:menu="@menu/activity_sidebar_drawer" />
 
