@@ -22,7 +22,10 @@
             android:title="Schatz aufgeben" />
     </group>
 
-    <item android:title="Segel einstellen">
+    <item android:title="Segel einstellen"
+        android:icon="@drawable/ic_menu_send"
+            android:id="@+id/nav_sail">
+
         <menu>
             <item
                 android:id="@+id/nav_settings"

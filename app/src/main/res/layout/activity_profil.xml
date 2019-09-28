@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/captainbackgroundneu"
     tools:context=".Profil">
 
     <ImageView
@@ -119,8 +120,8 @@
 
     <ImageButton
         android:id="@+id/imageButton"
-        android:layout_width="45"
-        android:layout_height="45"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         app:srcCompat="@drawable/ic_launcher_background"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="3dp" />

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/captainbackgroundneu"
     tools:context=".Main">
 
     <Button
@@ -65,6 +66,9 @@
         android:layout_marginRight="173dp"
         android:layout_marginBottom="12dp"
         android:text="XP-Bar-Pirat"
+        android:textColor="@color/colorAccent"
+        android:textColorHighlight="#7C15BBA2"
+        android:textColorHint="@color/colorPrimaryDark"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
