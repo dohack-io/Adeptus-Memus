@@ -12,10 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".RegistrationActivity" android:exported="true"></activity>
+        <activity android:name=".MainActivity" android:exported="true"></activity>
+        <activity android:name=".Profil" />
         <activity
             android:name=".Sidebar"
             android:label="@string/title_activity_sidebar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
