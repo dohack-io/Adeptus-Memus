@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "124715692098",
+    "firebase_url": "https://plankrdatabase.firebaseio.com",
+    "project_id": "plankrdatabase",
+    "storage_bucket": "plankrdatabase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124715692098:android:09a9ca328bd96ef8383ddb",
+        "android_client_info": {
+          "package_name": "com.example.plankr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "124715692098-na3353v9u5u0s3672u4sipls3q9lfn1l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHWgBfNryk7K8h4eonWPwXdAfZHzjEaM4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "124715692098-na3353v9u5u0s3672u4sipls3q9lfn1l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
