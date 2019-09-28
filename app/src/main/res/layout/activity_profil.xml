@@ -117,4 +117,34 @@
         app:layout_constraintStart_toEndOf="@+id/imageEinstellungen"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="45"
+        android:layout_height="45"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="3dp" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="78dp"
+        android:layout_height="75dp"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="41dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageEinstellungen"
+        app:srcCompat="@android:drawable/ic_delete" />
+
+    <Button
+        android:id="@+id/quit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="33dp"
+        android:layout_marginLeft="33dp"
+        android:layout_marginTop="81dp"
+        android:text="Quit"
+        app:layout_constraintStart_toEndOf="@+id/imageView7"
+        app:layout_constraintTop_toBottomOf="@+id/Einstellungen" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
