@@ -12,27 +12,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Profil"></activity>
-        <activity
-            android:name=".Sidebar"
-            android:label="@string/title_activity_sidebar"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".Main">
+        <activity android:name=".Auftrag">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Profil" />
         <activity
-            android:name=".BurgerMenu"
-            android:label="@string/title_activity_burger_menu"
-            android:parentActivityName=".ui.login.LoginActivity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.plankr.ui.login.LoginActivity" />
-
+            android:name=".Sidebar"
+            android:label="@string/title_activity_sidebar"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Main">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
