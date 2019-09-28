@@ -26,7 +26,7 @@
         app:headerLayout="@layout/nav_header_sidebar"
         app:itemIconTint="@color/colorPrimaryDark"
         app:itemTextAppearance="@style/TextAppearance.AppCompat.Small"
-        app:itemTextColor="@color/colorPrimary"
+        app:itemTextColor="#FFFFFF"
         app:menu="@menu/activity_sidebar_drawer" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
