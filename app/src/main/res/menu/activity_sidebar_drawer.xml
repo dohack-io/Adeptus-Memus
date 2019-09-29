@@ -25,8 +25,9 @@
     <item
         android:title="Segel einstellen"
         android:id="@+id/sail"
-        >
+        />
 
+    <item android:title="Segel einstellen">
         <menu>
             <item
                 android:id="@+id/nav_settings"
@@ -39,8 +40,7 @@
             <item
                 android:id="@+id/nav_quit"
                 android:icon="@drawable/ic_abmelden"
-                android:title="Anker setzten" />
-
+                android:title="Anker setzten"/>
         </menu>
     </item>
     </group>
