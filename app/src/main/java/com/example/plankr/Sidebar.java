@@ -83,8 +83,7 @@ public class Sidebar extends AppCompatActivity {
         }else if (id == R.id.nav_stats){
 
             fragmentManager.beginTransaction().replace(R.id.content_frame, new Statsfragment()).commit();
-
-
+            
         }else if (id == R.id.nav_profile){
 
             fragmentManager.beginTransaction().replace(R.id.content_frame, new Profilfragment()).commit();
