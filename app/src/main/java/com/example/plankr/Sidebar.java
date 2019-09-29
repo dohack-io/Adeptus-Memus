@@ -94,6 +94,7 @@ public class Sidebar extends AppCompatActivity implements NavigationView.OnNavig
 
 
     @Override
+
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
 
         int id= menuItem.getItemId();
@@ -123,4 +124,6 @@ public class Sidebar extends AppCompatActivity implements NavigationView.OnNavig
         return true;
 
     }
-}
+
+
+    }

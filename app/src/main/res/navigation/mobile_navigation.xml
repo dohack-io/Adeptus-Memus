@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@id/navigation">
 
     <fragment
         android:id="@+id/nav_home"
@@ -40,4 +40,44 @@
         android:name="com.example.plankr.ui.send.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
+    <activity
+        android:id="@+id/auftrag"
+        android:name="com.example.plankr.Auftrag"
+        android:label="activity_auftrag"
+        tools:layout="@layout/activity_auftrag" />
+    <activity
+        android:id="@+id/main"
+        android:name="com.example.plankr.Main"
+        android:label="activity_main3"
+        tools:layout="@layout/activity_main3" />
+    <activity
+        android:id="@+id/profil"
+        android:name="com.example.plankr.Profil"
+        android:label="activity_profil"
+        tools:layout="@layout/activity_profil" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.plankr.ui.login.LoginActivity"
+        android:label="activity_registration"
+        tools:layout="@layout/activity_registration" />
+    <activity
+        android:id="@+id/sidebar"
+        android:name="com.example.plankr.Sidebar"
+        android:label="activity_sidebar"
+        tools:layout="@layout/activity_sidebar" />
+    <navigation
+        android:id="@+id/navigation"
+        app:startDestination="@id/registrationActivity" >
+        <activity
+            android:id="@+id/registrationActivity"
+            android:name="com.example.plankr.RegistrationActivity"
+            android:label="content_registration"
+            tools:layout="@layout/content_registration" />
+        <action
+            android:id="@+id/action_global_sidebar"
+            app:destination="@id/sidebar" />
+        <action
+            android:id="@+id/action_global_loginActivity"
+            app:destination="@id/loginActivity" />
+    </navigation>
 </navigation>
