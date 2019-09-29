@@ -66,4 +66,39 @@ public class Sidebar extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-}
+
+
+    @Override
+
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        int id= menuItem.getItemId();
+        FragmentManager fragmentManager = getFragmentManager();
+
+
+        if (id == R.id.nav_achiev){
+
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Achievefragment()).commit();
+
+        }else if (id == R.id.nav_stats){
+
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Statsfragment()).commit();
+
+
+        }else if (id == R.id.nav_profile){
+
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Profilfragment()).commit();
+
+
+
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        drawer.closeDrawer(GravityCompat.START);
+
+        return true;
+
+    }
+
+
+    }

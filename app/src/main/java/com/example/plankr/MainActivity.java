@@ -106,6 +106,28 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    private void validate2(String userName, String userPassword){
+        progressDialog.setMessage("You can subscribe to DogeBrown");
+        progressDialog.show();
+        firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    progressDialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, Main.class));
+                }else{
+                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    counter--;
+                    Toast.makeText(MainActivity.this, "Attempts " + counter, Toast.LENGTH_SHORT ).show();
+                    if(counter == 0){
+                        progressDialog.dismiss();
+                        Login.setEnabled(false);
+                    }
+                }
+            }
+        });
     }
 
 }
