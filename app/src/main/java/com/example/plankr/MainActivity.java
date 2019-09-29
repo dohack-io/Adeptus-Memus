@@ -30,7 +30,6 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     private ProgressDialog progressDialog;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +37,18 @@ public class MainActivity extends AppCompatActivity {
 
         Name = (EditText)findViewById(R.id.register_username);
         Password = (EditText)findViewById(R.id.register_pass);
-        Login = (Button)findViewById(R.id.register_sign_in);
+        Login = findViewById(R.id.register_sign_in);
         userRegistration = findViewById(R.id.register_ready);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        progressDialog = new ProgressDialog(this);
 
+        FirebaseUser user = firebaseAuth.getCurrentUser();
 
+        if(user != null){
+            finish();
+            startActivity(new Intent(MainActivity.this, Main.class));
+        }
 
         userRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-       Login.setOnClickListener(new View.OnClickListener() {
+        Login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
@@ -95,6 +100,29 @@ public class MainActivity extends AppCompatActivity {
                     } else {
                         Login.setEnabled(false);
                         Toast.makeText(MainActivity.this, "Login-Button disabled" + counter, Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
+    }
+
+    private void validate(String userName, String userPassword){
+        progressDialog.setMessage("You can subscribe to DogeBrown");
+        progressDialog.show();
+        firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if(task.isSuccessful()){
+                    progressDialog.dismiss();
+                    Toast.makeText(MainActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(MainActivity.this, Main.class));
+                }else{
+                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                    counter--;
+                    Toast.makeText(MainActivity.this, "Attempts " + counter, Toast.LENGTH_SHORT ).show();
+                    if(counter == 0){
+                        progressDialog.dismiss();
+                        Login.setEnabled(false);
                     }
                 }
             }
