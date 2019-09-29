@@ -9,8 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText Name;
     private EditText Password;
-    private Button Login;
+    private Button login2;
     private Button Register;
     private int counter = 5;
     private Button userRegistration;
@@ -37,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         Name = (EditText)findViewById(R.id.register_username);
         Password = (EditText)findViewById(R.id.register_pass);
-        Login = findViewById(R.id.register_sign_in);
+        login2 = findViewById(R.id.register_sign_in);
         userRegistration = findViewById(R.id.register_ready);
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -45,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
 
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        if(user != null){
+        /*if(user != null){
             finish();
             startActivity(new Intent(MainActivity.this, Main.class));
-        }
+        }*/
+
 
         userRegistration.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,39 +56,50 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        Login.setOnClickListener(new View.OnClickListener() {
+        login2.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                 validate(Name.getText().toString(), Password.getText().toString());
 
             }
         });
+
+
+
+       /* Login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                validate(Name.getText().toString(), Password.getText().toString());
+            }
+        });*/
     }
 
-    private void validate(String name, String password){
 
+    private void validate(String name, String password) {
+
+        if(name.isEmpty() && password.isEmpty()){
+            Toast.makeText(MainActivity.this, "Login-Data is empty", Toast.LENGTH_SHORT).show();
+        } else {
         progressDialog.setMessage("Wait, until the alcohol kicks in!");
         progressDialog.show();
 
         firebaseAuth.signInWithEmailAndPassword(name, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
+                if (task.isSuccessful()) {
                     progressDialog.dismiss();
                     Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(MainActivity.this, Main.class));
-                } else  {
+                } else {
                     Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
                     counter--;
                     progressDialog.dismiss();
 
-                    if(counter != 0){
+                    if (counter != 0) {
                         Toast.makeText(MainActivity.this, "Login-Attempts: " + counter, Toast.LENGTH_LONG).show();
                     } else {
-                        Login.setEnabled(false);
+                        login2.setEnabled(false);
                         Toast.makeText(MainActivity.this, "Login-Button disabled" + counter, Toast.LENGTH_LONG).show();
                     }
                 }

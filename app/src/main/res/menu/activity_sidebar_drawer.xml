@@ -21,11 +21,6 @@
             android:icon="@drawable/ic_add_pfand"
             android:title="Schatz aufgeben" />
     </group>
-    <group>
-    <item
-        android:title="Segel einstellen"
-        android:id="@+id/sail"
-        />
 
     <item android:title="Segel einstellen">
         <menu>
@@ -43,6 +38,5 @@
                 android:title="Anker setzten"/>
         </menu>
     </item>
-    </group>
-</menu>
 
+</menu>

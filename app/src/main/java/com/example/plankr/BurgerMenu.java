@@ -21,14 +21,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class Sidebar extends AppCompatActivity {
+public class BurgerMenu extends AppCompatActivity {
 
     private AppBarConfiguration mAppBarConfiguration;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sidebar);
+        setContentView(R.layout.activity_burger_menu);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -56,7 +56,7 @@ public class Sidebar extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.sidebar, menu);
+        getMenuInflater().inflate(R.menu.burger_menu, menu);
         return true;
     }
 
@@ -66,39 +66,4 @@ public class Sidebar extends AppCompatActivity {
         return NavigationUI.navigateUp(navController, mAppBarConfiguration)
                 || super.onSupportNavigateUp();
     }
-
-
-    @Override
-
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-
-        int id= menuItem.getItemId();
-        FragmentManager fragmentManager = getFragmentManager();
-
-
-        if (id == R.id.nav_achiev){
-
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Achievefragment()).commit();
-
-        }else if (id == R.id.nav_stats){
-
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Statsfragment()).commit();
-
-
-        }else if (id == R.id.nav_profile){
-
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Profilfragment()).commit();
-
-
-
-        }
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-
-        drawer.closeDrawer(GravityCompat.START);
-
-        return true;
-
-    }
-
-
-    }
+}
