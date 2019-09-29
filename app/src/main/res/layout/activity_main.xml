@@ -14,8 +14,6 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     tools:context=".ui.login.LoginActivity">
 
-
-
     <EditText
         android:id="@+id/register_username"
         android:layout_width="327dp"
@@ -26,7 +24,7 @@
 
         android:layout_marginBottom="32dp"
         android:autofillHints=""
-        android:background="#DD5F5656"
+        android:background="@drawable/roundedbutton"
         android:cursorVisible="true"
         android:hint="@string/prompt_email"
         android:inputType="textEmailAddress"
@@ -36,7 +34,7 @@
         app:layout_constraintBottom_toTopOf="@+id/register_pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/loading" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
 
     <EditText
         android:id="@+id/register_pass"
@@ -46,7 +44,7 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
 
-        android:background="#DD5F5656"
+        android:background="@drawable/roundedbutton"
         android:hint="@string/prompt_password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
@@ -56,7 +54,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_username" />
 
-
     <Button
         android:id="@+id/register_sign_in"
         android:layout_width="wrap_content"
@@ -65,18 +62,12 @@
         android:layout_marginStart="48dp"
         android:layout_marginTop="64dp"
         android:layout_marginEnd="48dp"
-        android:enabled="false"
+        android:enabled="true"
         android:text="Login"
         android:textColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_pass" />
-
-
-
-
-
-
 
     <ProgressBar
         android:id="@+id/loading"
@@ -107,14 +98,11 @@
         app:layout_constraintTop_toBottomOf="@+id/register_sign_in" />
 
     <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="250dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="18dp"
-        app:layout_constraintBottom_toTopOf="@+id/register_username"
+        android:id="@+id/imageView9"
+        android:layout_width="200dp"
+        android:layout_height="258dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/dupac" />
+        app:srcCompat="@drawable/duca" />
 </androidx.constraintlayout.widget.ConstraintLayout>
