@@ -19,11 +19,11 @@
         android:layout_width="327dp"
         android:layout_height="38dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="96dp"
         android:layout_marginEnd="24dp"
 
 
         android:layout_marginBottom="32dp"
+        android:autofillHints=""
         android:background="#DD5F5656"
         android:cursorVisible="true"
         android:hint="@string/prompt_email"
@@ -34,8 +34,7 @@
         app:layout_constraintBottom_toTopOf="@+id/register_pass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:autofillHints="" />
+        app:layout_constraintTop_toTopOf="@+id/loading" />
 
     <EditText
         android:id="@+id/register_pass"
@@ -97,4 +96,16 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/register_sign_in" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="250dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/register_username"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/dupac" />
 </androidx.constraintlayout.widget.ConstraintLayout>
