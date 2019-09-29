@@ -78,56 +78,33 @@ public class MainActivity extends AppCompatActivity {
 
     private void validate(String name, String password) {
 
-        if(name.isEmpty() && password.isEmpty()){
+        if (name.isEmpty() && password.isEmpty()) {
             Toast.makeText(MainActivity.this, "Login-Data is empty", Toast.LENGTH_SHORT).show();
         } else {
-        progressDialog.setMessage("Wait, until the alcohol kicks in!");
-        progressDialog.show();
+            progressDialog.setMessage("Wait, until the alcohol kicks in!");
+            progressDialog.show();
 
-        firebaseAuth.signInWithEmailAndPassword(name, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
-                    progressDialog.dismiss();
-                    Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, Main.class));
-                } else {
-                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    counter--;
-                    progressDialog.dismiss();
-
-                    if (counter != 0) {
-                        Toast.makeText(MainActivity.this, "Login-Attempts: " + counter, Toast.LENGTH_LONG).show();
-                    } else {
-                        login2.setEnabled(false);
-                        Toast.makeText(MainActivity.this, "Login-Button disabled" + counter, Toast.LENGTH_LONG).show();
-                    }
-                }
-            }
-        });
-    }
-
-    private void validate2(String userName, String userPassword){
-        progressDialog.setMessage("You can subscribe to DogeBrown");
-        progressDialog.show();
-        firebaseAuth.signInWithEmailAndPassword(userName, userPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-                if(task.isSuccessful()){
-                    progressDialog.dismiss();
-                    Toast.makeText(MainActivity.this, "Login Succesfull", Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(MainActivity.this, Main.class));
-                }else{
-                    Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
-                    counter--;
-                    Toast.makeText(MainActivity.this, "Attempts " + counter, Toast.LENGTH_SHORT ).show();
-                    if(counter == 0){
+            firebaseAuth.signInWithEmailAndPassword(name, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
                         progressDialog.dismiss();
-                        Login.setEnabled(false);
+                        Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(MainActivity.this, Main.class));
+                    } else {
+                        Toast.makeText(MainActivity.this, "Login Failed", Toast.LENGTH_SHORT).show();
+                        counter--;
+                        progressDialog.dismiss();
+
+                        if (counter != 0) {
+                            Toast.makeText(MainActivity.this, "Login-Attempts: " + counter, Toast.LENGTH_LONG).show();
+                        } else {
+                            login2.setEnabled(false);
+                            Toast.makeText(MainActivity.this, "Login-Button disabled" + counter, Toast.LENGTH_LONG).show();
+                        }
                     }
                 }
-            }
-        });
+            });
+        }
     }
-
 }

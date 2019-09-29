@@ -1,12 +1,16 @@
 package com.example.plankr;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import android.view.MenuItem;
 import android.view.View;
 
+import androidx.annotation.NonNull;
+import androidx.core.view.GravityCompat;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -21,7 +25,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.Menu;
 
-public class Sidebar extends AppCompatActivity {
+public class Sidebar extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -78,15 +82,15 @@ public class Sidebar extends AppCompatActivity {
 
         if (id == R.id.nav_achiev){
 
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Achievefragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.nav_achiev, new Achievefragment()).commit();
 
         }else if (id == R.id.nav_stats){
 
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Statsfragment()).commit();
-            
+            fragmentManager.beginTransaction().replace(R.id.nav_stats, new Statsfragment()).commit();
+
         }else if (id == R.id.nav_profile){
 
-            fragmentManager.beginTransaction().replace(R.id.content_frame, new Profilfragment()).commit();
+            fragmentManager.beginTransaction().replace(R.id.nav_profile, new Profilfragment()).commit();
 
 
 
@@ -100,4 +104,5 @@ public class Sidebar extends AppCompatActivity {
     }
 
 
-    }
+
+}
