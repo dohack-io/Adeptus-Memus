@@ -5,33 +5,37 @@
 
     <group android:checkableBehavior="single">
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/nav_profile"
+            android:icon="@drawable/ic_account"
+            android:title="Profil" />
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:id="@+id/nav_stats"
+            android:icon="@drawable/ic_stats"
+            android:title="Statistik" />
         <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/nav_achiev"
+            android:icon="@drawable/ic_achievments"
+            android:title="Achievments" />
         <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+            android:id="@+id/nav_treasure"
+            android:icon="@drawable/ic_add_pfand"
+            android:title="Schatz aufgeben" />
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="Segel einstellen">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_einstellung"
+                android:title="Ruder richten" />
             <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:id="@+id/nav_help"
+                android:icon="@drawable/ic_help"
+                android:title="Mann über Bord" />
+            <item
+                android:id="@+id/nav_quit"
+                android:icon="@drawable/ic_abmelden"
+                android:title="Anker setzten"/>
         </menu>
     </item>
 

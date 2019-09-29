@@ -8,6 +8,8 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
+    //moin
+
     <include
         layout="@layout/app_bar_sidebar"
         android:layout_width="match_parent"
