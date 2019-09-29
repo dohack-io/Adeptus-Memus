@@ -1,5 +1,6 @@
 package com.example.plankr;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,6 +13,8 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.GravityCompat;
+import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -92,6 +95,32 @@ public class Sidebar extends AppCompatActivity implements NavigationView.OnNavig
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+
+        int id= menuItem.getItemId();
+        FragmentManager fragmentManager = getFragmentManager();
+
+
+        if (id == R.id.nav_achiev){
+
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Achievefragment()).commit();
+
+        }else if (id == R.id.nav_stats){
+
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Statsfragment()).commit();
+
+
+        }else if (id == R.id.nav_profile){
+
+            fragmentManager.beginTransaction().replace(R.id.content_frame, new Profilfragment()).commit();
+
+
+
+        }
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+
+        drawer.closeDrawer(GravityCompat.START);
+
+        return true;
+
     }
 }
